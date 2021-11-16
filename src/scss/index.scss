@@ -153,7 +153,7 @@ nav {
             background-color: black;
             position: relative;
 
-            &:before {
+            &::before {
                 content: "";
                 position: absolute;
                 top: -3px;
@@ -340,3 +340,246 @@ nav {
         }
     }
 }
+
+// RIGHT SIDE
+
+
+.right {
+    &__container{
+        width: 100%;
+        height: 100%;
+        background-color: #B6E2F8;
+        z-index: 10;
+    }
+
+    &__navigation {
+        &-content {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 1rem;
+        }
+
+        &-links {
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    &__btn {
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        & i {
+            color:white;
+            font-size: 20px;
+        }
+    }
+}
+
+.selected__product{
+    width: 100%;
+    height: 380px;
+    position: relative;
+
+    &-content {
+        width: 100%;
+        height: 380px;
+        padding: 1rem;
+        position: relative;
+    }
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        transform: rotate(-25deg);
+        position: absolute;
+        top: -3rem;
+        right: 1.5rem;
+    }
+
+    &-size {
+        width: 100%;
+        min-height: 210px;
+        background-color: black;
+
+        &-list {
+            color: rgb(155, 155, 155);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-item {
+            font-size: 17px;
+
+            &:nth-child(3){
+                transform: translateY(-1rem);
+                color: #eee;
+                font-size: 20px;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 3rem;
+                    right: 0.1rem;
+                    font-size: 10px;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #eee;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    
+    .content{
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+    }
+
+    &-text {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgb(92, 92, 92);
+    }
+
+    &-header {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 28px;
+    }
+
+    &-reviews {
+        margin-top: 0.5rem;
+        width: 100%;
+        padding: 10px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;   
+
+        & span {
+            text-transform: capitalize;
+            color: rgb(209, 209, 209);
+            letter-spacing: 1px;
+        }
+    }
+
+    &-stars_list {
+        display: flex;
+
+        & li i {
+            color: rgba(223, 223, 2, 0.89);
+            font-size: 15px;
+            padding: 0 5px;
+        }
+    }
+
+    @mixin circle() {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #fffafa2c;
+        border-radius: 50%;
+        border: 2px;
+        border-style: solid;
+        border-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .circle1 {
+        @include circle();
+        left: 144px;
+        top: 65%;
+    }
+
+    .circle2 {
+        @include circle();
+        right: 100px;
+        top: 25%;
+    }
+
+    &-icon {
+        width: 15px;
+        height: 15px;
+        background-color:white;
+        border-radius: 50%;
+        position: relative;
+
+        & i {
+            font-size: 15px;
+        }   
+    }
+
+    &-tag {
+        // width: 100px;
+        // height: 60px;
+        // border-radius: 10px;
+        // background-color: rgba(0, 0, 0, 0.37);
+        // position: absolute;
+        // bottom: 35px;
+        // right: -2.5rem;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+        // overflow: hidden;
+
+        & p:nth-child(1){
+            color: white;
+        }
+
+        & p:nth-child(2){
+            font-size: 13.5px;
+            color: #eee;
+            text-transform: capitalize;
+        }
+    }
+
+    .offer2{
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #eee;
+    }
+}
+
+.circle1 .selected__product-tag, .circle2 .selected__product-tag{
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.37);
+    position: absolute;
+    bottom: 35px;
+    right: -2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
